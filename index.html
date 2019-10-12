@@ -1,415 +1,458 @@
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="main.nested.css">
-  <script>
-    window['_fs_debug'] = false;
-    window['_fs_host'] = 'fullstory.com';
-    window['_fs_org'] = 'JVSAR';
-    window['_fs_namespace'] = 'FS';
-    (function(m, n, e, t, l, o, g, y) {
-      if (e in m) {
-        if (m.console && m.console.log) {
-          m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="main.nested.css" />
+    <script>
+      window["_fs_debug"] = false;
+      window["_fs_host"] = "fullstory.com";
+      window["_fs_org"] = "JVSAR";
+      window["_fs_namespace"] = "FS";
+      (function(m, n, e, t, l, o, g, y) {
+        if (e in m) {
+          if (m.console && m.console.log) {
+            m.console.log(
+              'FullStory namespace conflict. Please set window["_fs_namespace"].'
+            );
+          }
+          return;
         }
-        return;
-      }
-      g = m[e] = function(a, b, s) {
-        g.q ? g.q.push([a, b, s]) : g._api(a, b, s);
-      };
-      g.q = [];
-      o = n.createElement(t);
-      o.async = 1;
-      o.src = 'https://' + _fs_host + '/s/fs.js';
-      y = n.getElementsByTagName(t)[0];
-      y.parentNode.insertBefore(o, y);
-      g.identify = function(i, v, s) {
-        g(l, {
-          uid: i
-        }, s);
-        if (v) g(l, v, s)
-      };
-      g.setUserVars = function(v, s) {
-        g(l, v, s)
-      };
-      g.event = function(i, v, s) {
-        g('event', {
-          n: i,
-          p: v
-        }, s)
-      };
-      g.shutdown = function() {
-        g("rec", !1)
-      };
-      g.restart = function() {
-        g("rec", !0)
-      };
-      g.consent = function(a) {
-        g("consent", !arguments.length || a)
-      };
-      g.identifyAccount = function(i, v) {
-        o = 'account';
-        v = v || {};
-        v.acctId = i;
-        g(o, v)
-      };
-      g.clearUserCookie = function() {};
-    })(window, document, window['_fs_namespace'], 'script', 'user');
-  </script>
-</head>
-<title>Open Podcast</title>
-<link rel="shortcut icon" href="OP.png" type="image/x-icon">
-<!--<style>
-  body {
-    background: #454d5d;
-    color: white;
-    margin: 0;
-    font-family: "textile";
-    text-align: center;
-    /* backgroundand text */
-  }
-
-  .container {
-    height: 100%;
-    display: grid;
-    grid-gap: 3px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 50px auto 50px;
-    grid-template-areas:
-      "h h h h h h h h h h h h"
-      ". a c c c c c c c c c c"
-      "f f f f f f f f f f f f";
-  }
-
-  .header {
-    grid-area: h;
-  }
-
-  .main {
-    grid-area: c;
-  }
-
-  .footer {
-    background-color: 000000;
-    grid-area: f;
-  }
-
-  .title {
-    margin-top: 3.5%;
-    margin-left: 15.5%;
-    font-size: 2.125em;
-    width: 550px;
-    max-width: 75%;
-    text-align: center;
-  }
-
-  .intro {
-    text-align: center;
-    margin-left: -17.5%;
-    font-size: 1.5em;
-  }
-
-  .podcast {
-    height: 50px;
-    width: 50px;
-  }
-
-  .header {
-    width: 100%;
-    overflow: hidden;
-    background-color: #000000;
-    top: 0;
-    /* Position the navbar at the top of the page */
-  }
-
-  .header a {
-    float: right;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-  /* Change background on mouse-over */
-  .header a:hover {
-    background: #ffffff;
-    color: black;
-  }
-
-  .navbar {
-    overflow: hidden;
-    background-color: #333;
-  }
-
-  .navbar a {
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-  .dropdown {
-    float: right;
-    overflow: hidden;
-  }
-
-  .dropdown .dropbtn {
-    -webkit-tap-highlight-color: transparent;
-    background-color: transparent;
-    border: 4px solid white;
-    border-radius: 5px;
-    box-sizing: border-box;
-    color: white;
-    display: block;
-    font-size: inherit;
-    line-height: 1em;
-    margin: 0;
-    outline: none;
-    padding: 10px 25px;
-    position: relative;
-    text-decoration: none;
-    transition-delay: 0s;
-    transition-duration: .2s;
-    transition-property: all;
-    transition-timing-function: ease-out;
-    vertical-align: baseline;
-  }
-
-  .navbar a:hover,
-  .dropdown:hover .dropbtn {
-    background-color: ffffff;
-    color: 000000;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border: 2px solid #000000;
-  }
-
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    border: 2px solid #000000;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #ffffff;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  @media screen and (max-width: 414px) {
-    .container {
-      width: 414px;
-      margin: 0 auto;
-    }
-
-    .header {
-      float: right;
-      display: block;
-    }
-
-    .footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .title {
-      font-size: 2em;
-      margin-left: 5%;
-    }
-
-    .intro {
-      margin-left: -20%;
-      font-size: 1em;
-    }
-
-    @media screen and (max-width: 376px) {
-      .container {
-        width: 375px;
-        margin: 0 auto;
-      }
-
-      .header {
-        float: right;
-        display: block;
-      }
-
-      .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-      }
-
-      .title {
-        font-size: 2em;
-        margin-left: 5%;
-      }
-
-      .intro {
-        margin-left: -20%;
-        font-size: 1em;
-      }
-    }
-
-    @media screen and (max-width: 320px) {
+        g = m[e] = function(a, b, s) {
+          g.q ? g.q.push([a, b, s]) : g._api(a, b, s);
+        };
+        g.q = [];
+        o = n.createElement(t);
+        o.async = 1;
+        o.src = "https://" + _fs_host + "/s/fs.js";
+        y = n.getElementsByTagName(t)[0];
+        y.parentNode.insertBefore(o, y);
+        g.identify = function(i, v, s) {
+          g(
+            l,
+            {
+              uid: i
+            },
+            s
+          );
+          if (v) g(l, v, s);
+        };
+        g.setUserVars = function(v, s) {
+          g(l, v, s);
+        };
+        g.event = function(i, v, s) {
+          g(
+            "event",
+            {
+              n: i,
+              p: v
+            },
+            s
+          );
+        };
+        g.shutdown = function() {
+          g("rec", !1);
+        };
+        g.restart = function() {
+          g("rec", !0);
+        };
+        g.consent = function(a) {
+          g("consent", !arguments.length || a);
+        };
+        g.identifyAccount = function(i, v) {
+          o = "account";
+          v = v || {};
+          v.acctId = i;
+          g(o, v);
+        };
+        g.clearUserCookie = function() {};
+      })(window, document, window["_fs_namespace"], "script", "user");
+    </script>
+    <!-- Document title -->
+    <title>Open Podcast</title>
+    <link rel="shortcut icon" href="OP.png" type="image/x-icon" />
+    <!--style>
       body {
+        background: #454d5d;
+        color: white;
+        margin: 0;
         font-family: "textile";
+        text-align: center;
+        /* backgroundand text */
       }
 
       .container {
-        width: 320px;
-        margin: 0 auto;
-        font-family: "textile";
+        height: 100%;
+        display: grid;
+        grid-gap: 3px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 50px auto 50px;
+        grid-template-areas:
+          "h h h h h h h h h h h h"
+          ". a c c c c c c c c c c"
+          "f f f f f f f f f f f f";
       }
 
       .header {
-        float: right;
-        display: block;
+        grid-area: h;
+      }
+
+      .main {
+        grid-area: c;
       }
 
       .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
+        background-color: 000000;
+        grid-area: f;
       }
 
       .title {
-        font-size: 2em;
-        margin-left: 5%;
+        margin-top: 3.5%;
+        margin-left: 15.5%;
+        font-size: 2.125em;
+        width: 550px;
+        max-width: 75%;
+        text-align: center;
       }
 
       .intro {
-        margin-left: -20%;
+        text-align: center;
+        margin-left: -17.5%;
         font-size: 1.5em;
       }
-    }
 
-    /* screen 320px done */
-  }
-</style> -->
+      .podcast {
+        height: 50px;
+        width: 50px;
+      }
 
-<body>
-  <div class='container'>
-    <header id='header' class='header'>
-      <nav>
-        <a href='podcast.html' target='blank'>Podcast🎙</a>
+      .header {
+        width: 100%;
+        overflow: hidden;
+        background-color: #000000;
+        top: 0;
+        /* Position the navbar at the top of the page */
+      }
 
-      </nav>
-    </header>
-    <main class='main' id='main'>
-      <h1 class='title'> Welcome to Open Podcast</h1>
-      <p>The community for people interested in podcast industry</p>
-      <br>
-      <p>Sign up for our mailing list to be notified when we open up</p>
-      <h1 class='title' style='margin-top:10%;'>Planned Features include:</h1>
-      <p class='intro'>Community Podcast,
-        <br>Forum,
-        <br> Chat,
-        <br> and other features.</p>
+      .header a {
+        float: right;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
 
-      <!-- Begin Mailchimp Signup Form -->
-      <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-      <style type="text/css">
-        #mc_embed_signup {
-          background: #fff;
-          clear: left;
-          font: 14px Helvetica, Arial, sans-serif;
+      /* Change background on mouse-over */
+      .header a:hover {
+        background: #ffffff;
+        color: black;
+      }
+
+      .navbar {
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      .navbar a {
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .dropdown {
+        float: right;
+        overflow: hidden;
+      }
+
+      .dropdown .dropbtn {
+        -webkit-tap-highlight-color: transparent;
+        background-color: transparent;
+        border: 4px solid white;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: white;
+        display: block;
+        font-size: inherit;
+        line-height: 1em;
+        margin: 0;
+        outline: none;
+        padding: 10px 25px;
+        position: relative;
+        text-decoration: none;
+        transition-delay: 0s;
+        transition-duration: 0.2s;
+        transition-property: all;
+        transition-timing-function: ease-out;
+        vertical-align: baseline;
+      }
+
+      .navbar a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: ffffff;
+        color: 000000;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border: 2px solid #000000;
+      }
+
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        border: 2px solid #000000;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ffffff;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      @media screen and (max-width: 414px) {
+        .container {
+          width: 414px;
+          margin: 0 auto;
+        }
+
+        .header {
+          float: right;
+          display: block;
+        }
+
+        .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
           width: 100%;
         }
 
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+        .title {
+          font-size: 2em;
+          margin-left: 5%;
+        }
+
+        .intro {
+          margin-left: -20%;
+          font-size: 1em;
+        }
+
+        @media screen and (max-width: 376px) {
+          .container {
+            width: 375px;
+            margin: 0 auto;
+          }
+
+          .header {
+            float: right;
+            display: block;
+          }
+
+          .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+          }
+
+          .title {
+            font-size: 2em;
+            margin-left: 5%;
+          }
+
+          .intro {
+            margin-left: -20%;
+            font-size: 1em;
+          }
+        }
+
+        @media screen and (max-width: 320px) {
+          body {
+            font-family: "textile";
+          }
+
+          .container {
+            width: 320px;
+            margin: 0 auto;
+            font-family: "textile";
+          }
+
+          .header {
+            float: right;
+            display: block;
+          }
+
+          .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+          }
+
+          .title {
+            font-size: 2em;
+            margin-left: 5%;
+          }
+
+          .intro {
+            margin-left: -20%;
+            font-size: 1.5em;
+          }
+        }
+
+        /* screen 320px done */
+      }
+    </style-->
+  </head>
+  <body>
+    <div class="container">
+      <header id="header" class="header">
+        <nav>
+          <a href="podcast.html" target="_blank">Podcast🎙</a>
+        </nav>
+      </header>
+      <main class="main" id="main">
+        <h1 class="title">Welcome to Open Podcast</h1>
+        <p>The community for people interested in podcast industry</p>
+        <br />
+        <p>Sign up for our mailing list to be notified when we open up</p>
+        <h1 class="title" style="margin-top:10%;">Planned Features include:</h1>
+        <p class="intro">
+          Community Podcast, <br />Forum, <br />
+          Chat, <br />
+          and other features.
+        </p>
+
+        <!-- Begin Mailchimp Signup Form -->
+        <link
+          href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <style type="text/css">
+          #mc_embed_signup {
+            background: #fff;
+            clear: left;
+            font: 14px Helvetica, Arial, sans-serif;
+            width: 100%;
+          }
+
+          /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-      </style>
-      <style type="text/css">
-        #mc-embedded-subscribe-form input[type=checkbox] {
-          display: inline;
-          width: auto;
-          margin-right: 10px;
-          background: #454d5d;
-        }
+        </style>
+        <style type="text/css">
+          #mc-embedded-subscribe-form input[type="checkbox"] {
+            display: inline;
+            width: auto;
+            margin-right: 10px;
+            background: #454d5d;
+          }
 
-        #mergeRow-gdpr {
-          margin-top: 20px;
+          #mergeRow-gdpr {
+            margin-top: 20px;
+          }
 
-        }
+          #mergeRow-gdpr fieldset label {
+            font-weight: normal;
+          }
 
-        #mergeRow-gdpr fieldset label {
-          font-weight: normal;
-
-        }
-
-        #mc-embedded-subscribe-form .mc_fieldset {
-          border: none;
-          min-height: 0px;
-          padding-bottom: 0px;
-          background: #454d5d;
-
-        }
-      </style>
-      <div id="mc_embed_signup">
-        <form style='background: #454d5d; margin-top:-23%;' action="https://twitter.us20.list-manage.com/subscribe/post?u=3b3ea7679e534fdbd33140942&amp;id=75950d097a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-          class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: fixed; left: -5000px;" aria-hidden="true"></div>
-            <div class="clear" style='background: #454d5d;'><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-              <button type='submit' style=' background-color: #006cb9; line-height: 1.5; padding: .5em 2em; cursor: pointer; border-radius: 6px;margin-top: -1%; border: 2px solid #000000; color: #000000; font-size: 16px;'>Subscribe</button>
+          #mc-embedded-subscribe-form .mc_fieldset {
+            border: none;
+            min-height: 0px;
+            padding-bottom: 0px;
+            background: #454d5d;
+          }
+        </style>
+        <div id="mc_embed_signup">
+          <form
+            style="background: #454d5d; margin-top:-23%;"
+            action="https://twitter.us20.list-manage.com/subscribe/post?u=3b3ea7679e534fdbd33140942&amp;id=75950d097a"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            target="_blank"
+            novalidate
+          >
+            <div id="mc_embed_signup_scroll">
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div
+                style="position: fixed; left: -5000px;"
+                aria-hidden="true"
+              ></div>
+              <div class="clear" style="background: #454d5d;">
+                <input
+                  type="email"
+                  value=""
+                  name="EMAIL"
+                  class="email"
+                  id="mce-EMAIL"
+                  placeholder="email address"
+                  required
+                />
+                <button
+                  type="submit"
+                  style=" background-color: #006cb9; line-height: 1.5; padding: .5em 2em; cursor: pointer; border-radius: 6px;margin-top: -1%; border: 2px solid #000000; color: #000000; font-size: 16px;"
+                >
+                  Subscribe
+                </button>
+              </div>
             </div>
+          </form>
+        </div>
 
-          </div>
-        </form>
-      </div>
+        <!--End mc_embed_signup-->
+      </main>
+      <footer class="footer" style="color:white;">
+        email supremerumham@gmail.com for questions, comments, or to report bugs
+        <br />
+        Created in 2019 by
+        <a
+          style="color:white;"
+          href="https://twitter.com/SupremeRumHam"
+          target="_blank"
+          >supremerumham</a
+        >
+        <br />
+      </footer>
+    </div>
 
-      <!--End mc_embed_signup-->
-    </main>
-    <footer class="footer" style='color:white;'>
-      email supremerumham@gmail.com for questions, comments, or to report bugs
-      <br>
-      Created in 2019 by <a style='color:white;' href="https://twitter.com/SupremeRumHam" target="blank">supremerumham</a>
-      <br>
-    </footer>
-  </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/6.6.0/firebase-app.js"></script>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/6.6.0/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
        https://firebase.google.com/docs/web/setup#reserved-urls -->
 
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139196437-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-139196437-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'UA-139196437-2');
-  </script>
-</body>
-
+      gtag("config", "UA-139196437-2");
+    </script>
+  </body>
 </html>
