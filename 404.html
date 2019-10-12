@@ -1,615 +1,639 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    window['_fs_debug'] = false;
-    window['_fs_host'] = 'fullstory.com';
-    window['_fs_org'] = 'JVSAR';
-    window['_fs_namespace'] = 'FS';
-    (function(m, n, e, t, l, o, g, y) {
-      if (e in m) {
-        if (m.console && m.console.log) {
-          m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      window["_fs_debug"] = false;
+      window["_fs_host"] = "fullstory.com";
+      window["_fs_org"] = "JVSAR";
+      window["_fs_namespace"] = "FS";
+      (function(m, n, e, t, l, o, g, y) {
+        if (e in m) {
+          if (m.console && m.console.log) {
+            m.console.log(
+              'FullStory namespace conflict. Please set window["_fs_namespace"].'
+            );
+          }
+          return;
         }
-        return;
-      }
-      g = m[e] = function(a, b, s) {
-        g.q ? g.q.push([a, b, s]) : g._api(a, b, s);
-      };
-      g.q = [];
-      o = n.createElement(t);
-      o.async = 1;
-      o.src = 'https://' + _fs_host + '/s/fs.js';
-      y = n.getElementsByTagName(t)[0];
-      y.parentNode.insertBefore(o, y);
-      g.identify = function(i, v, s) {
-        g(l, {
-          uid: i
-        }, s);
-        if (v) g(l, v, s)
-      };
-      g.setUserVars = function(v, s) {
-        g(l, v, s)
-      };
-      g.event = function(i, v, s) {
-        g('event', {
-          n: i,
-          p: v
-        }, s)
-      };
-      g.shutdown = function() {
-        g("rec", !1)
-      };
-      g.restart = function() {
-        g("rec", !0)
-      };
-      g.consent = function(a) {
-        g("consent", !arguments.length || a)
-      };
-      g.identifyAccount = function(i, v) {
-        o = 'account';
-        v = v || {};
-        v.acctId = i;
-        g(o, v)
-      };
-      g.clearUserCookie = function() {};
-    })(window, document, window['_fs_namespace'], 'script', 'user');
-  </script>
-<title>404</title>
-<link rel="shortcut icon" href="srht.png" type="image/x-icon">
-<style>
-  body {
-    background: #006cb9;
-    margin: 0;
-  }
-
-  .container {
-    height: 100%;
-    display: grid;
-    grid-gap: 3px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 50px auto 50px;
-    grid-template-areas:
-      "h h h h h h h h h h h h"
-      ". . c c c c c c c c c c"
-      "f f f f f f f f f f f f";
-  }
-
-  .header {
-    grid-area: h;
-  }
-
-  .content {
-    grid-area: c;
-    color: white;
-  }
-
-  .footer {
-    grid-area: f;
-    background: #3b4250;
-    text-align: center;
-    width: 100vw;
-  }
-
-  .dark-mode .footer {
-    background: #000000;
-  }
-
-  .switch {
-    position: fixed;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    top: 7px;
-    left: 600px
-  }
-
-  /*   .switch input {display:none;}*/
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: black;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-
-  input:checked+.slider {
-    background-color: #006cb9;
-  }
-
-  input:focus+.slider {
-    box-shadow: 0 0 1px #006cb9;
-  }
-
-  input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-  .header {
-    width: 100%;
-    overflow: hidden;
-    background-color: #000000;
-    top: 0;
-    /* Position the navbar at the top of the page */
-  }
-
-  .dark-mode .header {
-    background: #3b4250;
-  }
-
-  /* Links inside the navbar */
-  .header a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-  /* Change background on mouse-over */
-  .header a:hover {
-    background: #ddd;
-    color: black;
-  }
-
-  body.dark-mode {
-    background: white;
-    /* gray */
-  }
-
-  .emo {
-    margin: 0 auto;
-    margin-top: 5%;
-    margin-left: 15%;
-    box-sizing: content-box;
-    width: 450px;
-    height: 150px;
-    padding: 15px;
-    border: 5px solid black;
-    /* animation-delay: 5s; */
-    -webkit-animation: slideIn 2s forwards;
-    -moz-animation: slideIn 2s forwards;
-    animation: slideIn 2s forwards;
-  }
-
-  @-webkit-keyframes slideIn {
-    0% {
-      transform: translateX(-100px);
-    }
-
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  @-moz-keyframes slideIn {
-    0% {
-      transform: translateX(-900px);
-    }
-
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideIn {
-    0% {
-      transform: translateX(-900px);
-    }
-
-    100% {
-      transform: translateX(50px);
-    }
-  }
-
-  .dark-mode .emo {
-    color: black;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  .title {
-    margin-top: .1%;
-    font-size: 50px;
-    width: 800px;
-    max-width: 100%;
-    text-align: center;
-    "
-
-  }
-
-  .dark-mode .title {
-    color: black;
-  }
-
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-
-  .dropdown .dropbtn {
-    -webkit-tap-highlight-color: transparent;
-    background-color: transparent;
-    border: 4px solid white;
-    border-radius: 5px;
-    box-sizing: border-box;
-    color: white;
-    display: block;
-    font-size: inherit;
-    line-height: 1em;
-    margin: 0;
-    outline: none;
-    padding: 10px 25px;
-    position: relative;
-    text-decoration: none;
-    transition-delay: 0s;
-    transition-duration: .2s;
-    transition-property: all;
-    transition-timing-function: ease-out;
-    vertical-align: baseline;
-  }
-
-  .navbar a:hover,
-  .dropdown:hover .dropbtn {
-    background-color: ddd;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  @media screen and (max-width: 768px) {
-    .container {
-      width: 768px;
-      margin: 0 auto;
-    }
-
-    .emo {
-      margin-left: -1%;
-    }
-  }
-
-  @media screen and (max-width: 414px) {
-    .container {
-      width: 414px;
-      margin: 0 auto;
-    }
-
-    .header {
-      background-color: #3b4250;
-      position: fixed;
-    }
-
-    .footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: #3b4250;
-    }
-
-    .emo {
-      margin-left: -15%;
-    }
-
-    .emo {
-      margin: 0 auto;
-      margin-top: 5%;
-      margin-left: 10%;
-      box-sizing: content-box;
-      width: 100px;
-      height: 300px;
-      padding: 15px;
-      border: 5px solid black;
-      /* animation-delay: 5s; */
-      -webkit-animation: slideIn 2s forwards;
-      -moz-animation: slideIn 2s forwards;
-      animation: slideIn 2s forwards;
-    }
-
-    @-webkit-keyframes slideIn {
-      0% {
-        transform: translateX(-100px);
+        g = m[e] = function(a, b, s) {
+          g.q ? g.q.push([a, b, s]) : g._api(a, b, s);
+        };
+        g.q = [];
+        o = n.createElement(t);
+        o.async = 1;
+        o.src = "https://" + _fs_host + "/s/fs.js";
+        y = n.getElementsByTagName(t)[0];
+        y.parentNode.insertBefore(o, y);
+        g.identify = function(i, v, s) {
+          g(
+            l,
+            {
+              uid: i
+            },
+            s
+          );
+          if (v) g(l, v, s);
+        };
+        g.setUserVars = function(v, s) {
+          g(l, v, s);
+        };
+        g.event = function(i, v, s) {
+          g(
+            "event",
+            {
+              n: i,
+              p: v
+            },
+            s
+          );
+        };
+        g.shutdown = function() {
+          g("rec", !1);
+        };
+        g.restart = function() {
+          g("rec", !0);
+        };
+        g.consent = function(a) {
+          g("consent", !arguments.length || a);
+        };
+        g.identifyAccount = function(i, v) {
+          o = "account";
+          v = v || {};
+          v.acctId = i;
+          g(o, v);
+        };
+        g.clearUserCookie = function() {};
+      })(window, document, window["_fs_namespace"], "script", "user");
+    </script>
+    <title>404</title>
+    <link rel="shortcut icon" href="srht.png" type="image/x-icon" />
+    <style>
+      body {
+        background: #006cb9;
+        margin: 0;
       }
 
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    @-moz-keyframes slideIn {
-      0% {
-        transform: translateX(-900px);
-      }
-
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideIn {
-      0% {
-        transform: translateX(-900px);
+      .container {
+        height: 100%;
+        display: grid;
+        grid-gap: 3px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 50px auto 50px;
+        grid-template-areas:
+          "h h h h h h h h h h h h"
+          ". . c c c c c c c c c c"
+          "f f f f f f f f f f f f";
       }
 
-      100% {
-        transform: translateX(50px);
-      }
-    }
-  }
-
-  /* New Phone Who's This? */
-  @media screen and (max-width: 376px) {
-    .container {
-      width: 376px;
-      margin: 0 auto;
-    }
-
-    .header {
-      background-color: #3b4250;
-      position: fixed;
-    }
-
-    .footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: #3b4250;
-    }
-
-    .emo {
-      margin-left: -15%;
-    }
-
-    .emo {
-      margin: 0 auto;
-      margin-top: 5%;
-      margin-left: 10%;
-      box-sizing: content-box;
-      width: 100px;
-      height: 300px;
-      padding: 15px;
-      border: 5px solid black;
-      /* animation-delay: 5s; */
-      -webkit-animation: slideIn 2s forwards;
-      -moz-animation: slideIn 2s forwards;
-      animation: slideIn 2s forwards;
-    }
-
-    @-webkit-keyframes slideIn {
-      0% {
-        transform: translateX(-100px);
+      .header {
+        grid-area: h;
       }
 
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    @-moz-keyframes slideIn {
-      0% {
-        transform: translateX(-900px);
+      .content {
+        grid-area: c;
+        color: white;
       }
 
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideIn {
-      0% {
-        transform: translateX(-900px);
+      .footer {
+        grid-area: f;
+        background: #3b4250;
+        text-align: center;
+        width: 100vw;
       }
 
-      100% {
-        transform: translateX(50px);
-      }
-    }
-  }
-
-  /* New Phone Who's This? */
-  @media screen and (max-width: 320px) {
-    .container {
-      width: 320px;
-      margin: 0 auto;
-    }
-
-    .header {
-      background-color: #3b4250;
-      position: fixed;
-    }
-
-    .footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: #3b4250;
-    }
-
-    .emo {
-      margin-left: -15%;
-    }
-
-    .emo {
-      margin: 0 auto;
-      margin-top: 5%;
-      margin-left: 10%;
-      box-sizing: content-box;
-      width: 100px;
-      height: 300px;
-      padding: 15px;
-      border: 5px solid black;
-      /* animation-delay: 5s; */
-      -webkit-animation: slideIn 2s forwards;
-      -moz-animation: slideIn 2s forwards;
-      animation: slideIn 2s forwards;
-    }
-
-    @-webkit-keyframes slideIn {
-      0% {
-        transform: translateX(-100px);
+      .dark-mode .footer {
+        background: #000000;
       }
 
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    @-moz-keyframes slideIn {
-      0% {
-        transform: translateX(-900px);
-      }
-
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideIn {
-      0% {
-        transform: translateX(-900px);
+      .switch {
+        position: fixed;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        top: 7px;
+        left: 600px
       }
 
-      100% {
-        transform: translateX(50px);
+      /*   .switch input {display:none;}*/
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
       }
-    }
-  }
-</style>
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: black;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      input:checked+.slider {
+        background-color: #006cb9;
+      }
+
+      input:focus+.slider {
+        box-shadow: 0 0 1px #006cb9;
+      }
+
+      input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+
+      .header {
+        width: 100%;
+        overflow: hidden;
+        background-color: #000000;
+        top: 0;
+        /* Position the navbar at the top of the page */
+      }
+
+      .dark-mode .header {
+        background: #3b4250;
+      }
+
+      /* Links inside the navbar */
+      .header a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* Change background on mouse-over */
+      .header a:hover {
+        background: #ddd;
+        color: black;
+      }
+
+      body.dark-mode {
+        background: white;
+        /* gray */
+      }
+
+      .emo {
+        margin: 0 auto;
+        margin-top: 5%;
+        margin-left: 15%;
+        box-sizing: content-box;
+        width: 450px;
+        height: 150px;
+        padding: 15px;
+        border: 5px solid black;
+        /* animation-delay: 5s; */
+        -webkit-animation: slideIn 2s forwards;
+        -moz-animation: slideIn 2s forwards;
+        animation: slideIn 2s forwards;
+      }
+
+      @-webkit-keyframes slideIn {
+        0% {
+          transform: translateX(-100px);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @-moz-keyframes slideIn {
+        0% {
+          transform: translateX(-900px);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideIn {
+        0% {
+          transform: translateX(-900px);
+        }
+
+        100% {
+          transform: translateX(50px);
+        }
+      }
+
+      .dark-mode .emo {
+        color: black;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .title {
+        margin-top: .1%;
+        font-size: 50px;
+        width: 800px;
+        max-width: 100%;
+        text-align: center;
+        "
+
+      }
+
+      .dark-mode .title {
+        color: black;
+      }
+
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+
+      .dropdown .dropbtn {
+        -webkit-tap-highlight-color: transparent;
+        background-color: transparent;
+        border: 4px solid white;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: white;
+        display: block;
+        font-size: inherit;
+        line-height: 1em;
+        margin: 0;
+        outline: none;
+        padding: 10px 25px;
+        position: relative;
+        text-decoration: none;
+        transition-delay: 0s;
+        transition-duration: .2s;
+        transition-property: all;
+        transition-timing-function: ease-out;
+        vertical-align: baseline;
+      }
+
+      .navbar a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: ddd;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          width: 768px;
+          margin: 0 auto;
+        }
+
+        .emo {
+          margin-left: -1%;
+        }
+      }
+
+      @media screen and (max-width: 414px) {
+        .container {
+          width: 414px;
+          margin: 0 auto;
+        }
+
+        .header {
+          background-color: #3b4250;
+          position: fixed;
+        }
+
+        .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #3b4250;
+        }
+
+        .emo {
+          margin-left: -15%;
+        }
+
+        .emo {
+          margin: 0 auto;
+          margin-top: 5%;
+          margin-left: 10%;
+          box-sizing: content-box;
+          width: 100px;
+          height: 300px;
+          padding: 15px;
+          border: 5px solid black;
+          /* animation-delay: 5s; */
+          -webkit-animation: slideIn 2s forwards;
+          -moz-animation: slideIn 2s forwards;
+          animation: slideIn 2s forwards;
+        }
+
+        @-webkit-keyframes slideIn {
+          0% {
+            transform: translateX(-100px);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        @-moz-keyframes slideIn {
+          0% {
+            transform: translateX(-900px);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideIn {
+          0% {
+            transform: translateX(-900px);
+          }
+
+          100% {
+            transform: translateX(50px);
+          }
+        }
+      }
+
+      /* New Phone Who's This? */
+      @media screen and (max-width: 376px) {
+        .container {
+          width: 376px;
+          margin: 0 auto;
+        }
+
+        .header {
+          background-color: #3b4250;
+          position: fixed;
+        }
+
+        .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #3b4250;
+        }
+
+        .emo {
+          margin-left: -15%;
+        }
+
+        .emo {
+          margin: 0 auto;
+          margin-top: 5%;
+          margin-left: 10%;
+          box-sizing: content-box;
+          width: 100px;
+          height: 300px;
+          padding: 15px;
+          border: 5px solid black;
+          /* animation-delay: 5s; */
+          -webkit-animation: slideIn 2s forwards;
+          -moz-animation: slideIn 2s forwards;
+          animation: slideIn 2s forwards;
+        }
+
+        @-webkit-keyframes slideIn {
+          0% {
+            transform: translateX(-100px);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        @-moz-keyframes slideIn {
+          0% {
+            transform: translateX(-900px);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideIn {
+          0% {
+            transform: translateX(-900px);
+          }
+
+          100% {
+            transform: translateX(50px);
+          }
+        }
+      }
+
+      /* New Phone Who's This? */
+      @media screen and (max-width: 320px) {
+        .container {
+          width: 320px;
+          margin: 0 auto;
+        }
+
+        .header {
+          background-color: #3b4250;
+          position: fixed;
+        }
+
+        .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #3b4250;
+        }
+
+        .emo {
+          margin-left: -15%;
+        }
+
+        .emo {
+          margin: 0 auto;
+          margin-top: 5%;
+          margin-left: 10%;
+          box-sizing: content-box;
+          width: 100px;
+          height: 300px;
+          padding: 15px;
+          border: 5px solid black;
+          /* animation-delay: 5s; */
+          -webkit-animation: slideIn 2s forwards;
+          -moz-animation: slideIn 2s forwards;
+          animation: slideIn 2s forwards;
+        }
+
+        @-webkit-keyframes slideIn {
+          0% {
+            transform: translateX(-100px);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        @-moz-keyframes slideIn {
+          0% {
+            transform: translateX(-900px);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideIn {
+          0% {
+            transform: translateX(-900px);
+          }
+
+          100% {
+            transform: translateX(50px);
+          }
+        }
+      }
+    </style>
   </head>
-<body id="body" class="normal-mode">
-  <div class="container">
-    <div class="header">
-      <nav>
-        <a href='index.html' target='_blank'>Home🏠</a>
-        <a href='podcast.html' target='_blank'>Podcast🎙</a>
-        <div class='dropdown'>
-          <button class='dropbtn'>More👇</button>
-          <div class='dropdown-content'>
-            <a href='writing.html' target='_blank'>Writing📝</a>
-            <a href='alertsforbtc.html' target='_blank'>alertsforbtc.com💰</a>
-            <a href='about.html' target='_blank'>About🧑</a>
-          </div>
+  <body id="body" class="normal-mode">
+    <main>
+      <div class="container">
+        <div class="header">
+          <nav>
+            <a href="index.html" target="_blank">Home🏠</a>
+            <a href="podcast.html" target="_blank">Podcast🎙</a>
+            <div class="dropdown">
+              <button class="dropbtn">More👇</button>
+              <div class="dropdown-content">
+                <a href="writing.html" target="_blank">Writing📝</a>
+                <a href="alertsforbtc.html" target="_blank"
+                  >alertsforbtc.com💰</a
+                >
+                <a href="about.html" target="_blank">About🧑</a>
+              </div>
+            </div>
+            <label class="switch">
+              <input
+                type="checkbox"
+                name="dark_light"
+                onclick="toggleDarkLight()"
+                title="Toggle dark/light mode"
+              />
+              <span class="slider round"></span>
+            </label>
+          </nav>
         </div>
-        <label class="switch">
-          <input type="checkbox" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">
-          <span class="slider round"></span>
-        </label>
-      </nav>
-    </div>
-    <div class="content">
-      <h1 class='title'>404 Error: Page Not Found</h1>
-      <h2 class="emo">404 Error:
-        <br>
-        Refresh, Go Back, or Use the Nav Bar
-        <br>
-        🔃 🔙 👆</h2>
-      </br>
-      <div class="rectangle"></div>
-    </div>
-    <div class="footer" style='color:white;'>
-      email supremerumham@gmail.com for questions, comments, or to report bugs
-      <br>
-      Created in 2018 by <a href='https://twitter.com/supremerumham' style='color:white'>SupremeRumHam</a>
-      </br>
-    </div>
-  </div>
+        <div class="content">
+          <h1 class="title">404 Error: Page Not Found</h1>
+          <h2 class="emo">
+            404 Error:
+            <br />
+            Refresh, Go Back, or Use the Nav Bar
+            <br />
+            🔃 🔙 👆
+          </h2>
+          <div class="rectangle"></div>
+        </div>
+        <div class="footer" style="color:white;">
+          email supremerumham@gmail.com for questions, comments, or to report
+          bugs
+          <br />
+          Created in 2018 by
+          <a href="https://twitter.com/supremerumham" style="color:white"
+            >SupremeRumHam</a
+          >
+        </div>
+      </div>
+    </main>
+    <script>
+      ///Dark Mode Checkbox
+      function toggleDarkLight() {
+        var body = document.getElementById("body");
+        var currentClass = body.className;
+        body.className =
+          currentClass == "dark-mode" ? "normal-mode" : "dark-mode";
+      }
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDtXbLA9PNgdmxpBYB3SJ_ZLsw9T69S52E",
+        authDomain: "supremerumham-design.firebaseapp.com",
+        databaseURL: "https://supremerumham-design.firebaseio.com",
+        projectId: "supremerumham-design",
+        storageBucket: "supremerumham-design.appspot.com",
+        messagingSenderId: "234674419341"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-139196437-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-  </main>
-  <script>
-    ///Dark Mode Checkbox
-    function toggleDarkLight() {
-      var body = document.getElementById('body');
-      var currentClass = body.className;
-      body.className = currentClass == 'dark-mode' ? 'normal-mode' : 'dark-mode';
-    }
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDtXbLA9PNgdmxpBYB3SJ_ZLsw9T69S52E",
-      authDomain: "supremerumham-design.firebaseapp.com",
-      databaseURL: "https://supremerumham-design.firebaseio.com",
-      projectId: "supremerumham-design",
-      storageBucket: "supremerumham-design.appspot.com",
-      messagingSenderId: "234674419341"
-    };
-    firebase.initializeApp(config);
-  </script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139196437-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-139196437-1');
-  </script>
-</body>
-
+      gtag("config", "UA-139196437-1");
+    </script>
+  </body>
 </html>
