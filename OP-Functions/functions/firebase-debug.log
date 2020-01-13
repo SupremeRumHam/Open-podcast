@@ -1,0 +1,132 @@
+[debug] [2020-01-07T23:42:40.324Z] ----------------------------------------------------------------------
+[debug] [2020-01-07T23:42:40.327Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\supremerumham\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js functions:shell
+[debug] [2020-01-07T23:42:40.327Z] CLI Version:   7.10.0
+[debug] [2020-01-07T23:42:40.327Z] Platform:      win32
+[debug] [2020-01-07T23:42:40.327Z] Node Version:  v10.15.3
+[debug] [2020-01-07T23:42:40.328Z] Time:          Tue Jan 07 2020 15:42:40 GMT-0800 (Pacific Standard Time)
+[debug] [2020-01-07T23:42:40.328Z] ----------------------------------------------------------------------
+[debug] [2020-01-07T23:42:40.328Z] 
+[debug] [2020-01-07T23:42:40.351Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-07T23:42:40.352Z] > authorizing via signed-in user
+[debug] [2020-01-07T23:42:40.352Z] [iam] checking project open-podcast-297f3 for permissions ["firebase.projects.get"]
+[debug] [2020-01-07T23:42:40.354Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-07T23:42:40.354Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-07T23:42:40.530Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-07T23:42:40.536Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/open-podcast-297f3:testIamPermissions  
+
+[debug] [2020-01-07T23:42:40.689Z] <<< HTTP RESPONSE 200
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5000
+[debug] [2020-01-07T23:42:43.209Z] [functions] Watching "C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions" for Cloud Functions...
+[debug] [2020-01-07T23:42:43.223Z] DEBUG: [worker-~diagnostic~-58678d0c-0ac7-4a17-9a30-11579019c848]: Assigning socketPath: \\?\pipe\C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\50212
+[debug] [2020-01-07T23:42:43.224Z] DEBUG: [worker-~diagnostic~-58678d0c-0ac7-4a17-9a30-11579019c848]: BUSY
+[debug] [2020-01-07T23:42:43.756Z] DEBUG: [runtime-status] [50212] Functions runtime initialized. {"cwd":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions","node_version":"10.15.3"}
+[debug] [2020-01-07T23:42:43.757Z] DEBUG: [runtime-status] [50212] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-07T23:42:43.761Z] DEBUG: [runtime-status] [50212] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-07T23:42:43.763Z] DEBUG: [runtime-status] [50212] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-07T23:42:43.764Z] DEBUG: [runtime-status] [50212] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-07T23:42:44.662Z] [functions[api]] http function initialized (http://localhost:5000/open-podcast-297f3/us-central1/api).
+[debug] [2020-01-07T23:42:44.662Z] [functions[createNotificationOnLike]] function ignored because the firestore emulator does not exist or is not running.
+[debug] [2020-01-07T23:42:44.662Z] [functions[deleteNotificationOnUnLike]] function ignored because the firestore emulator does not exist or is not running.
+[debug] [2020-01-07T23:42:44.662Z] [functions[createNotificationOnComment]] function ignored because the firestore emulator does not exist or is not running.
+[debug] [2020-01-07T23:42:44.662Z] [functions[onUserImageChange]] function ignored because the firestore emulator does not exist or is not running.
+[debug] [2020-01-07T23:42:44.662Z] [functions[onUpdateDelete]] function ignored because the firestore emulator does not exist or is not running.
+[info] i  functions: Loaded functions: api, createNotificationOnLike, deleteNotificationOnUnLike, createNotificationOnComment, onUserImageChange, onUpdateDelete
+[debug] [2020-01-07T23:42:44.686Z] DEBUG: [worker-~diagnostic~-58678d0c-0ac7-4a17-9a30-11579019c848]: exited
+[debug] [2020-01-07T23:42:44.686Z] DEBUG: [worker-~diagnostic~-58678d0c-0ac7-4a17-9a30-11579019c848]: FINISHED
+[debug] [2020-01-10T02:37:02.521Z] ----------------------------------------------------------------------
+[debug] [2020-01-10T02:37:02.523Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\supremerumham\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-01-10T02:37:02.523Z] CLI Version:   7.10.0
+[debug] [2020-01-10T02:37:02.523Z] Platform:      win32
+[debug] [2020-01-10T02:37:02.523Z] Node Version:  v10.15.3
+[debug] [2020-01-10T02:37:02.524Z] Time:          Thu Jan 09 2020 18:37:02 GMT-0800 (Pacific Standard Time)
+[debug] [2020-01-10T02:37:02.524Z] ----------------------------------------------------------------------
+[debug] [2020-01-10T02:37:02.524Z] 
+[debug] [2020-01-10T02:37:02.535Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-10T02:37:02.536Z] > authorizing via signed-in user
+[debug] [2020-01-10T02:37:02.536Z] [iam] checking project open-podcast-297f3 for permissions ["firebase.projects.get"]
+[debug] [2020-01-10T02:37:02.538Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/open-podcast-297f3:testIamPermissions  
+
+[debug] [2020-01-10T02:37:02.869Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-10T02:37:02.873Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/open-podcast-297f3  
+ 
+[debug] [2020-01-10T02:37:03.097Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\supremerumham\Desktop\OpenPodcast-functions'...
+[info] 
+[debug] [2020-01-10T02:37:03.109Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/open-podcast-297f3/webApps/-/config  
+ 
+[debug] [2020-01-10T02:37:03.574Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions" for Cloud Functions...
+[debug] [2020-01-10T02:37:05.678Z] [worker-~diagnostic~-0b2764e5-2fe5-4e1f-b79e-7d7596712b17]: Assigning socketPath: \\?\pipe\C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\9744
+[debug] [2020-01-10T02:37:05.679Z] [worker-~diagnostic~-0b2764e5-2fe5-4e1f-b79e-7d7596712b17]: BUSY
+[debug] [2020-01-10T02:37:06.242Z] [runtime-status] [9744] Functions runtime initialized. {"cwd":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions","node_version":"10.15.3"}
+[debug] [2020-01-10T02:37:06.243Z] [runtime-status] [9744] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-10T02:37:06.247Z] [runtime-status] [9744] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-10T02:37:06.248Z] [runtime-status] [9744] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-10T02:37:06.249Z] [runtime-status] [9744] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[api]: http function initialized (http://localhost:5001/open-podcast-297f3/us-central1/api).
+[info] i  functions[createNotificationOnLike]: function ignored because the firestore emulator does not exist or is not running.
+[info] i  functions[deleteNotificationOnUnLike]: function ignored because the firestore emulator does not exist or is not running.
+[info] i  functions[createNotificationOnComment]: function ignored because the firestore emulator does not exist or is not running.
+[info] i  functions[onUserImageChange]: function ignored because the firestore emulator does not exist or is not running.
+[info] i  functions[onUpdateDelete]: function ignored because the firestore emulator does not exist or is not running.
+[debug] [2020-01-10T02:37:06.924Z] [worker-~diagnostic~-0b2764e5-2fe5-4e1f-b79e-7d7596712b17]: exited
+[debug] [2020-01-10T02:37:06.924Z] [worker-~diagnostic~-0b2764e5-2fe5-4e1f-b79e-7d7596712b17]: FINISHED
+[debug] [2020-01-10T02:37:53.032Z] Accepted request POST /open-podcast-297f3/us-central1/api/signup --> api
+[debug] [2020-01-10T02:37:53.043Z] [worker-api-adc8186a-cbb1-47ff-b5a5-41e000ea385c]: Assigning socketPath: \\?\pipe\C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\7080
+[debug] [2020-01-10T02:37:53.043Z] [worker-api-adc8186a-cbb1-47ff-b5a5-41e000ea385c]: BUSY
+[debug] [2020-01-10T02:37:54.000Z] [runtime-status] [7080] Functions runtime initialized. {"cwd":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions","node_version":"10.15.3"}
+[debug] [2020-01-10T02:37:54.007Z] [runtime-status] [7080] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-10T02:37:54.018Z] [runtime-status] [7080] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-10T02:37:54.024Z] [runtime-status] [7080] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-10T02:37:54.027Z] [runtime-status] [7080] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-10T02:37:55.161Z] [runtime-status] [7080] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-01-10T02:37:55.167Z] [runtime-status] [7080] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-01-10T02:37:55.168Z] [runtime-status] [7080] Running api in mode HTTPS
+[debug] [2020-01-10T02:37:55.176Z] [runtime-status] [7080] Attempting to listen to socketPath: \\?\pipe\C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\7080
+[debug] [2020-01-10T02:37:55.185Z] [functions] Runtime ready! Sending request!
+[debug] [2020-01-10T02:37:55.247Z] [runtime-status] [7080] Ephemeral server handling POST request
+[debug] [2020-01-10T02:37:55.264Z] [runtime-status] [7080] Ephemeral server survived.
+[info] >  TypeError: Cannot read property 'trim' of undefined
+[info] >      at isEmpty (C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\util\validators.js:8:14)
+[info] >      at exports.validateSignupData (C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\util\validators.js:15:7)
+[info] >      at exports.signup (C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\handlers\users.js:28:7)
+[info] >      at Layer.handle [as handle_request] (C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\node_modules\express\lib\router\layer.js:95:5)
+[info] >      at next (C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\node_modules\express\lib\router\route.js:137:13)
+[info] >      at Route.dispatch (C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\node_modules\express\lib\router\route.js:112:3)
+[info] >      at Layer.handle [as handle_request] (C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\node_modules\express\lib\router\layer.js:95:5)
+[info] >      at C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\node_modules\express\lib\router\index.js:281:22
+[info] >      at Function.process_params (C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\node_modules\express\lib\router\index.js:335:12)
+[info] >      at next (C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\node_modules\express\lib\router\index.js:275:10)
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-01-10T02:37:55.295Z] [worker-api-adc8186a-cbb1-47ff-b5a5-41e000ea385c]: IDLE
+[debug] [2020-01-10T03:03:06.921Z] File C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\util\validators.js changed, reloading triggers
+[debug] [2020-01-10T03:03:07.922Z] [worker-pool]: Shutting down IDLE worker (api)
+[debug] [2020-01-10T03:03:07.936Z] [worker-~diagnostic~-956c4ce4-8d2c-48fa-8182-1a48ed05ab4e]: Assigning socketPath: \\?\pipe\C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\17604
+[debug] [2020-01-10T03:03:07.936Z] [worker-~diagnostic~-956c4ce4-8d2c-48fa-8182-1a48ed05ab4e]: BUSY
+[debug] [2020-01-10T03:03:07.936Z] [worker-api-adc8186a-cbb1-47ff-b5a5-41e000ea385c]: exited
+[debug] [2020-01-10T03:03:07.936Z] [worker-api-adc8186a-cbb1-47ff-b5a5-41e000ea385c]: FINISHED
+[debug] [2020-01-10T03:03:08.528Z] [runtime-status] [17604] Functions runtime initialized. {"cwd":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions","node_version":"10.15.3"}
+[debug] [2020-01-10T03:03:08.530Z] [runtime-status] [17604] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-10T03:03:08.533Z] [runtime-status] [17604] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-10T03:03:08.535Z] [runtime-status] [17604] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-10T03:03:08.536Z] [runtime-status] [17604] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-10T03:03:09.257Z] [worker-~diagnostic~-956c4ce4-8d2c-48fa-8182-1a48ed05ab4e]: exited
+[debug] [2020-01-10T03:03:09.257Z] [worker-~diagnostic~-956c4ce4-8d2c-48fa-8182-1a48ed05ab4e]: FINISHED
+[debug] [2020-01-10T03:03:29.476Z] File C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\dbschema.js changed, reloading triggers
+[debug] [2020-01-10T03:03:32.406Z] [worker-~diagnostic~-77cd3096-ff87-43b2-b88d-f225b3838af9]: Assigning socketPath: \\?\pipe\C:\Users\supremerumham\Desktop\OpenPodcast-functions\functions\18240
+[debug] [2020-01-10T03:03:32.406Z] [worker-~diagnostic~-77cd3096-ff87-43b2-b88d-f225b3838af9]: BUSY
+[debug] [2020-01-10T03:03:33.058Z] [runtime-status] [18240] Functions runtime initialized. {"cwd":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions","node_version":"10.15.3"}
+[debug] [2020-01-10T03:03:33.061Z] [runtime-status] [18240] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-10T03:03:33.066Z] [runtime-status] [18240] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-01-10T03:03:33.068Z] [runtime-status] [18240] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-10T03:03:33.069Z] [runtime-status] [18240] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\Users\\supremerumham\\Desktop\\OpenPodcast-functions\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-01-10T03:03:33.756Z] [worker-~diagnostic~-77cd3096-ff87-43b2-b88d-f225b3838af9]: exited
+[debug] [2020-01-10T03:03:33.756Z] [worker-~diagnostic~-77cd3096-ff87-43b2-b88d-f225b3838af9]: FINISHED
