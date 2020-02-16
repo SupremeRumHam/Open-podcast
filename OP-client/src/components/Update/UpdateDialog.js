@@ -43,7 +43,15 @@ const styles = {
     textAlign: 'center'
   },
   image: {
-    margin: '20px auto 20px auto'
+    margin: '20px auto 20px auto',
+    '@media only screen and (max-width: 320px)': { // eslint-disable-line no-useless-computed-key
+      maxWidth: '50%',
+      borderRadius: '10%',
+    },
+    '@media only screen and (max-width: 375px)': { // eslint-disable-line no-useless-computed-key
+      maxWidth: '50%',
+      borderRadius: '10%',
+    }
   },
   pageTitle: {
     margin: '10px auto 10px auto'
@@ -90,7 +98,15 @@ const styles = {
       height: 200,
       objectFit: 'cover',
       maxWidth: '100%',
-      borderRadius: '50%'
+      borderRadius: '50%',
+      '@media only screen and (max-width: 320px)': { // eslint-disable-line no-useless-computed-key
+        maxWidth: 30,
+        borderRadius: '10%',
+      },
+      '@media only screen and (max-width: 375px)': { // eslint-disable-line no-useless-computed-key
+        maxWidth: 30,
+        borderRadius: '10%',
+      }
     },
     '& .profile-details': {
       textAlign: 'center',
@@ -124,7 +140,15 @@ profileImage: {
   maxWidth:200,
   height: 200,
   borderRadius: '50%',
-  objectFit: 'cover'
+  objectFit: 'cover',
+  '@media only screen and (max-width: 320px)': { // eslint-disable-line no-useless-computed-key
+    maxWidth: 30,
+    borderRadius: '10%',
+  },
+  '@media only screen and (max-width: 375px)': { // eslint-disable-line no-useless-computed-key
+    maxWidth: 30,
+    borderRadius: '10%',
+  }
 },
 dialogContent: {
   padding: 20
@@ -135,7 +159,13 @@ closeButton: {
 },
 expandButton: {
 position: "absolute",
-left: '90%'
+left: '90%',
+'@media only screen and (max-width: 320px)': { // eslint-disable-line no-useless-computed-key
+  left:"250px", 
+},
+'@media only screen and (max-width: 375px)': { // eslint-disable-line no-useless-computed-key
+  left:"250px", 
+}
 },
 spinnerDiv: {
   textAlign: 'center',
