@@ -22,14 +22,42 @@ const styles = {
   card: {
     position: 'relative',
     display: 'flex',
-    marginBottom: 20
+    marginBottom: 20,
+    '@media only screen and (max-width: 414px)': { // eslint-disable-line no-useless-computed-key
+      marginLeft:"10px",
+      width:"375px",
+      height:"350px"
+    },
+    '@media only screen and (max-width: 375px)': { // eslint-disable-line no-useless-computed-key
+      marginLeft:"4px",
+      width:"300px",
+      height:"350px"
+    },
+    '@media only screen and (max-width: 320px)': { // eslint-disable-line no-useless-computed-key
+      marginLeft:"4px",
+      width:"300px",
+      height:"350px"
+    }
   },
   image: {
-    minWidth: 200
+    minWidth: 200,
+    '@media only screen and (max-width: 414px)': { // eslint-disable-line no-useless-computed-key
+      display:"none"
+    },
+    '@media only screen and (max-width: 375px)': { // eslint-disable-line no-useless-computed-key
+      display:"none"
+    },
+    '@media only screen and (max-width: 320px)': { // eslint-disable-line no-useless-computed-key
+      display:"none"
+    }
   },
   content: {
     padding: 25,
-    objectFit: 'cover'
+    objectFit: 'cover',
+    '@media only screen and (max-width: 320px)': { // eslint-disable-line no-useless-computed-key
+      width: "320px",
+      height: "100px"
+    }
   }
 };
 
