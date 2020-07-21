@@ -1,2 +1,2 @@
 # Open-podcast
-for Openpodcast.xyz
+for https://Openpodcast.xyz
